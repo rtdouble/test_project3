@@ -23,6 +23,7 @@ body
   height: 100%
   min-height: 100%
   .cont
+    z-index: 100
     overflow: hidden
     display: flex
     flex-direction: column
@@ -97,11 +98,42 @@ nav
     border: none
 
 .slider
+  position: relative
+  overflow: hidden
   height: 400px
   width: 100%
   background-color: #f8f8f8
-  background-image: url("../img/slider_img.png")
   background-position: center
+  .slides
+    position: absolute
+    display: inline-block
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+  .slide1
+    opacity: 1
+    transition: opacity 1s
+  .slide2
+    opacity: 0
+    transition: opacity 1s
+  .wrapper
+    position: relative
+    width: 980px
+    padding: 0 10px
+    margin: 0 auto
+    .btns
+      cursor: pointer
+      width: 34px
+      height: 61px
+    .btnl
+      position: absolute
+      top: 155px
+      left: 0
+    .btnr
+      position: absolute
+      top: 155px
+      right: 0
+
 
 .breadcrumbs
   height: 30px
@@ -162,6 +194,8 @@ main
       top: 380px
       text-align: center
       img
+        width: 97px
+        height: 111px
         display: block
         margin: 0 auto
       span
@@ -291,6 +325,7 @@ footer
     margin: 285px auto 0 auto
     color: #535353
     width: 465px
+    display: none
     h2
       padding-top: 30px
       padding-bottom: 10px
@@ -322,7 +357,7 @@ footer
         border: #c3c3c3 1px solid !important
       .error
         border: 1px solid red !important
-        box-shadow: 0px 0px 17px -7px red inset
+        box-shadow: 0 0 17px -7px red inset
       textarea
         box-sizing: border-box
         display: block
@@ -361,7 +396,6 @@ footer
   background-color: rgba(0, 0, 0, 0.55)
   z-index: 100
   transition: background-color 1s
-
 .hidden
   opacity: 0
   z-index: 0

@@ -7,7 +7,14 @@ const closeBtn = document.querySelector('.close_popup'),
       form = document.querySelector('.js_form'),
       formInputs = document.querySelectorAll('.js_input'),
       inputEmail = document.querySelector('.js_input_email'),
-      inputPhone = document.querySelector('.js_input_phone');
+      inputPhone = document.querySelector('.js_input_phone'),
+      slider = document.querySelector('.slider'),
+      sliderBtns = document.querySelectorAll('.btns'),
+      slide1 = document.querySelector('.slide1'),
+      slide2 = document.querySelector('.slide2');
+
+// START ---- Валидация формы
+
 
 function validateEmail(email) {
   let re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -55,10 +62,7 @@ form.onsubmit = function () {
 }
 
 
-
-
-
-
+// END----
 
 
 // START ---- Настройка открытия и закрытия окна формы
@@ -81,4 +85,50 @@ supportBtn.addEventListener("click", () => {
 });
 
 // END ----
+
+
+// START ---- Слайдер
+
+sliderBtns.forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (slide1.style.opacity === '0') {
+      slide1.style.opacity = '1';
+      slide2.style.opacity = '0';
+    } else {
+      slide1.style.opacity = '0';
+      slide2.style.opacity = '1';
+    }
+  });
+})
+
+function sliderSet () {
+  for (let i = 1; i > 0; i++) {
+    if (i % 2 === 1) {
+      if (slide1.style.opacity === '0') {
+        slide1.style.opacity = '1';
+        slide2.style.opacity = '0';
+      } else {
+        slide1.style.opacity = '0';
+        slide2.style.opacity = '1';
+      }
+      return;
+    }
+  }
+}
+
+setInterval(sliderSet, 4000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

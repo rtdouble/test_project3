@@ -22,6 +22,7 @@ body {
   min-height: 100%;
 }
 body .cont {
+  z-index: 100;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -111,11 +112,48 @@ nav ul :last-of-type {
 }
 
 .slider {
+  position: relative;
+  overflow: hidden;
   height: 400px;
   width: 100%;
   background-color: #f8f8f8;
-  background-image: url("../img/slider_img.png");
   background-position: center;
+}
+.slider .slides {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.slider .slide1 {
+  opacity: 1;
+  transition: opacity 1s;
+}
+.slider .slide2 {
+  opacity: 0;
+  transition: opacity 1s;
+}
+.slider .wrapper {
+  position: relative;
+  width: 980px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+.slider .wrapper .btns {
+  cursor: pointer;
+  width: 34px;
+  height: 61px;
+}
+.slider .wrapper .btnl {
+  position: absolute;
+  top: 155px;
+  left: 0;
+}
+.slider .wrapper .btnr {
+  position: absolute;
+  top: 155px;
+  right: 0;
 }
 
 .breadcrumbs {
@@ -191,6 +229,8 @@ main .left_block .price_download {
   text-align: center;
 }
 main .left_block .price_download img {
+  width: 97px;
+  height: 111px;
   display: block;
   margin: 0 auto;
 }
@@ -343,6 +383,7 @@ footer .footer_content .dev_company a span {
   margin: 285px auto 0 auto;
   color: #535353;
   width: 465px;
+  display: none;
 }
 .parent_popup .popup h2 {
   padding-top: 30px;
@@ -381,7 +422,7 @@ footer .footer_content .dev_company a span {
 }
 .parent_popup .popup form .error {
   border: 1px solid red !important;
-  box-shadow: 0px 0px 17px -7px red inset;
+  box-shadow: 0 0 17px -7px red inset;
 }
 .parent_popup .popup form textarea {
   box-sizing: border-box;
