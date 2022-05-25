@@ -7,7 +7,7 @@
     <title>test_project3</title>
 </head>
 <body>
-    <div class="container">
+    <div class="cont">
     <header>
         <div class="header">
             <div class="header_logo"><a href="#"><img src="img/logo_company.png" alt="logo" title="logo"></a></div>
@@ -172,20 +172,29 @@
         </div>
     </footer>
     </div>
-    <div class="parent_popup">
+    <div class="parent_popup hidden">
         <div class="popup">
             <h2>ОБРАТНАЯ СВЯЗЬ</h2>
-            <form action="" method="post" name="support" id="support-form">
-                <label for="POST-name">Ваше имя *</label>
-                <input id="POST-name" type="text" name="name" required>
-                <label for="POST-tel">Телефон *</label>
-                <input id="POST-tel" type="tel" name="tel" required>
-                <label for="POST-email">Email *</label>
-                <input id="POST-email" type="email" name="email" required>
-                <label for="POST-message">Сообщение</label>
-                <textarea name="message" form="support-form" id="POST-message"></textarea>
-                <input type="submit" value="ОТПРАВИТЬ">
+            <form class="js_form" action="" method="post" name="support" id="support-form" novalidate>
+                <div>
+                    <label for="POST-name">Ваше имя *</label>
+                    <input placeholder="" class="js_input" id="POST-name" type="text" name="name" required>
+                </div>
+                <div>
+                    <label for="POST-tel">Телефон *</label>
+                    <input placeholder="" class="js_input js_input_phone" id="POST-tel" type="tel" name="tel" required>
+                </div>
+                <div>
+                    <label for="POST-email">Email *</label>
+                    <input placeholder="" class="js_input js_input_email" id="POST-email" type="email" name="email" required>
+                </div>
+                <div>
+                    <label for="POST-message">Сообщение</label>
+                    <textarea name="message" form="support-form" id="POST-message"></textarea>
+                </div>
+                <input type="submit" name="submit" value="ОТПРАВИТЬ">
             </form>
+            <div class="close_popup"></div>
         </div>
     </div>
     <script src="js/script.js"></script>
